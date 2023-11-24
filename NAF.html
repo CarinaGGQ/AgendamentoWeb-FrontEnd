@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NAF</title>
+
+    <link rel="stylesheet" href="Style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header class="cabeçalho">
+      <img
+        src="./img/Unifeso_logo_preto.png"
+        width="150px"
+        alt="Logo da UNIFESO preto"
+      />
+
+      <nav>
+        <ul class="item-cabeçalho">
+          <li class="item-lista-cabeçalho contem-filhos">
+            <a href="#">Sou Colaborador</a>
+            <ul>
+              <li>
+                <a onclick="openModalAluno()" class="botao-colaborador"
+                  >Sou aluno do NAF</a
+                >
+              </li>
+              <li>
+                <a onclick="openModalProfessor()" class="botao-colaborador"
+                  >Sou professor do NAF</a
+                >
+              </li>
+              <li>
+                <a onclick="openModalAdministrador()" class="botao-colaborador"
+                  >Sou administrador do NAF</a
+                >
+              </li>
+            </ul>
+          </li>
+
+          <li class="item-lista-cabeçalho">
+            <a onclick="openModalColaborador()" class="botao-colaborador"
+              >Quero ser colaborador</a
+            >
+          </li>
+
+          <li class="item-lista-cabeçalho">
+            <a onclick="openModalFeedback()" class="botao-colaborador"
+              >Feedback</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Seção apresentação -->
+      <section class="secao secao-apresentacao">
+        <img
+          src="https://blog.cooperasis.com.br/wp-content/uploads/2023/01/65387_9ee3009fadb0160efd3de9eccb1ca281-1024x560.jpg"
+          alt="Imagem de Contabilidade"
+          height="270px"
+        />
+
+        <div class="coluna-objetivo">
+          <h1>Auxílio para calcular seus impostos</h1>
+          <p class="p-apresentacao">
+            Nosso objetivo é prestar atendimento contábil e fiscal à comunidade
+            local, como o auxílio à declaração do Imposto de Renda, enquanto
+            prepara os estudantes de Administração, Ciências Contábeis e Direito
+            para o exercício de suas carreiras, sempre com a orientação de
+            excelentes professores.
+          </p>
+        </div>
+      </section>
+
+      <!--Seção Quem Somos-->
+      <section class="secao secao-QuemSomos">
+        <h3>Quem Somos</h3>
+        <p>
+          O Núcleo de Apoio Contábil e Fiscal – NAF é uma parceria com
+          instituições de ensino superior, e no caso do Unifeso, envolve cursos
+          de Administração, Ciências Contábeis e Direito. Pessoas são
+          encaminhadas pela agência de Teresópolis da Receita Federal aos
+          serviços do NAF, que são altamente demandados, especialmente durante a
+          temporada de declaração do Imposto de Renda. O NAF proporciona a
+          capacitação e o treinamento dos estudantes, fornecendo-lhes
+          conhecimentos de ordem técnica e ética, visando transmitir a vivência
+          contábil e fiscal dentro da realidade social.<br />
+        </p>
+      </section>
+
+      <!--Seção Agendamento-->
+      <section class="secao secao-agendamento">
+        <h3>Agendamento</h3>
+        <p>
+          O atendimento ao público é realizado no edifício (colocar o nome do
+          edifício) no Campus Antonio Paulo Capanema de Souza.
+        </p>
+        <!--Botão Agendamento-->
+        <div onclick="openModalCalendario()" class="botao botao-agendamento">
+          Clique aqui para agendar
+        </div>
+      </section>
+
+      <!--Criando Janela Calendário-->
+      <div id="calendário-container" class="calendário-container">
+        <div class="calendário">
+          <button class="fechar" id="fechar">X</button>
+
+          <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+              <h1></h1>
+              <p></p>
+            </div>
+            <i class="fas fa-angle-right next"></i>
+          </div>
+          <div class="weekdays">
+            <div>Dom</div>
+            <div>Seg</div>
+            <div>Ter</div>
+            <div>Qua</div>
+            <div>Qui</div>
+            <div>Sex</div>
+            <div>Sab</div>
+          </div>
+          <div onclick="openModalHorario()" class="days"></div>
+        </div>
+      </div>
+
+      <!--Criando Janela Horário-->
+      <div id="horarios-container" class="horarios-container">
+        <div onclick="openModalAgendamento()" class="horarios">
+          <button class="fechar" id="fechar">X</button>
+
+          <h1>Escolha um Horário:</h1>
+
+          <div class="botao botao-horario">9:00h</div>
+          <div class="botao botao-horario">10:00h</div>
+          <div class="botao botao-horario">11:00h</div>
+          <div class="botao botao-horario">12:00h</div>
+          <div class="botao botao-horario">13:00h</div>
+          <div class="botao botao-horario">14:00h</div>
+          <div class="botao botao-horario">15:00h</div>
+          <div class="botao botao-horario">16:00h</div>
+          <div class="botao botao-horario">17:00h</div>
+        </div>
+      </div>
+
+      <!--Criando Janela Confirmação de Agendamento-->
+      <div id="confirmação-container" class="confirmação-container">
+        <div class="confirmação">
+          <button class="fechar" id="fechar">X</button>
+
+          <div class="confirmação-agendamento">
+            <h3>Agendamento confirmado com sucesso!</h3>
+          </div>
+
+          <div class="campos-cadastro">
+            <p>Por favor, preencha os campos abaixo para cadastro.</p>
+          </div>
+
+          <form action="">
+            <div class="item-janela-cabeçalho">
+              <label for="name">Nome:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="*Seu nome completo"
+                required
+              />
+            </div>
+
+            <div class="item-janela-cabeçalho">
+              <label for="name">E-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="*Digite seu e-mail"
+                required
+              />
+            </div>
+
+            <button type="submit" class="botao botao-enviar">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Criando Janela Sou Aluno-->
+      <div id="aluno-container" class="aluno-container">
+        <div class="aluno">
+          <button class="fechar" id="fechar">X</button>
+
+          <form action="" class="form form-aluno">
+            <div class="item-janela-cabeçalho">
+              <label for="name">E-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="*Digite seu e-mail"
+                required
+              />
+            </div>
+
+            <div class="item-janela-cabeçalho">
+              <label for="password">Senha:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="*Digite sua senha"
+                required
+              />
+            </div>
+
+            <button type="submit" class="botao botao-enviar">Entrar</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Criando Janela Sou Professor-->
+      <div id="professor-container" class="professor-container">
+        <div class="professor">
+          <button class="fechar" id="fechar">X</button>
+
+          <form action="" class="form form-professor">
+            <div class="item-janela-cabeçalho">
+              <label for="name">E-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="*Digite seu e-mail"
+                required
+              />
+            </div>
+
+            <div class="item-janela-cabeçalho">
+              <label for="password">Senha:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="*Digite sua senha"
+                required
+              />
+            </div>
+
+            <button type="submit" class="botao botao-enviar">Entrar</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Criando Janela Sou Administrador-->
+      <div id="administrador-container" class="administrador-container">
+        <div class="administrador">
+          <button class="fechar" id="fechar">X</button>
+
+          <form action="" class="form form-administrador">
+            <div class="item-janela-cabeçalho">
+              <label for="name">E-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="*Digite seu e-mail"
+                required
+              />
+            </div>
+
+            <div class="item-janela-cabeçalho">
+              <label for="password">Senha:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="*Digite sua senha"
+                required
+              />
+            </div>
+
+            <button type="submit" class="botao botao-enviar">Entrar</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Criando Janela Quero ser Colaborador-->
+      <div id="colaborador-container" class="colaborador-container">
+        <div class="colaborador">
+          <button class="fechar" id="fechar">X</button>
+
+          <form action="" class="form form-colaborador">
+            <div class="item-janela-cabeçalho">
+              <label for="name">Nome:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="*Seu nome completo"
+                required
+              />
+            </div>
+
+            <div class="item-janela-cabeçalho">
+              <label for="name">E-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="*Seu e-mail"
+                required
+              />
+            </div>
+
+            <div class="item-janela-cabeçalho">
+              <label for="password">Criar senha:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="*Crie sua senha"
+                required
+              />
+            </div>
+
+            <div class="item-janela-cabeçalho">
+              <label for="password">Confirme sua senha:</label>
+              <input
+                type="password"
+                id="confirm_password"
+                name="confirm_password"
+                placeholder="*Repita sua senha"
+                required
+              />
+            </div>
+
+            <button type="submit" class="botao botao-enviar">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Criando Feedback-->
+      <div id="feedback-container" class="feedback-container">
+        <div class="feedback">
+          <button class="fechar" id="fechar">X</button>
+
+          <form action="" class="form form-feedback">
+            <div class="item-janela-cabeçalho">
+              <label for="name">E-mail:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="*Digite seu e-mail"
+                required
+              />
+            </div>
+
+            <div class="item-janela-cabeçalho">
+              <label for="feedback">Feedback:</label>
+              <input
+                type="text"
+                id="feedback"
+                name="feedback"
+                placeholder="*Escreva seu feedback"
+                required
+              />
+            </div>
+
+            <button type="submit" class="botao botao-enviar">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+    </main>
+
+    <footer>
+      <img src="./img/Unifeso_logo.png" width="150px" alt="Logo da UNIFESO" />
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,482 @@
+@import url(https://fonts.googleapis.com/css?family=Arapey:400,400i);
+
+/* Global */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #000000;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  background-color: #f4f5f7;
+}
+
+h1 {
+  font-family: "Arapey", sans-serif;
+  font-size: 7.5rem;
+  line-height: 1;
+  padding: 2rem 0;
+  display: block;
+}
+
+h2 {
+  font-size: 2.76rem;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+h3 {
+  font-family: "Arapey", sans-serif;
+  font-size: 4rem;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+
+p {
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  padding: 2rem 0;
+  color: #757575;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  padding: 1.02rem;
+  background-color: white;
+  box-shadow: inset 0 0 0.2rem 0.2rem rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 0.8rem;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: #404040;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  color: #757575;
+}
+
+.secao {
+  padding: 2rem 10rem;
+}
+
+.botao {
+  display: inline-block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 3rem;
+  padding: 0.65rem 2.5rem;
+  color: white;
+  box-shadow: 0 0.21rem 0.8rem rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-bottom: solid 0.4rem #08412b;
+  border-right: solid 0.4rem #08412b;
+  background-image: linear-gradient(180deg, #136b49, #545a58);
+  cursor: pointer;
+}
+
+/* Cabeçalho */
+
+.cabeçalho {
+  font: 1rem Lato, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  background-color: white;
+  padding: 1rem 12rem;
+  box-shadow: 0 0.21rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.contem-filhos ul {
+  display: none;
+  flex-flow: column;
+  gap: 0rem;
+  align-items: stretch;
+  width: max-content;
+  position: absolute;
+  background-color: rgba(22, 22, 22, 0.9);
+  padding: 0.5rem 1.5rem;
+  left: -1.5rem;
+  z-index: 1000;
+  font-size: 1rem;
+  line-height: 2.5rem;
+  border-radius: 6px;
+}
+
+.contem-filhos {
+  position: relative;
+}
+
+.contem-filhos:hover ul {
+  display: flex;
+}
+
+.item-lista-cabeçalho a {
+  color: #989898;
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.item-lista-cabeçalho a:hover,
+.item-lista-cabeçalho a:active {
+  color: #f60;
+}
+
+.item-lista-cabeçalho.contem-filhos::after {
+  content: "\2bc6";
+}
+
+/* Janelas do Cabeçalho */
+
+.item-janela-cabeçalho {
+  margin-bottom: 1rem;
+  margin-inline: 0.5rem;
+}
+
+.botao-colaborador {
+  cursor: pointer;
+}
+
+.aluno-container,
+.professor-container,
+.administrador-container,
+.colaborador-container,
+.feedback-container,
+.confirmação-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000004b;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.aluno,
+.professor,
+.administrador,
+.colaborador,
+.feedback,
+.confirmação {
+  width: 44%;
+  background-color: #ffffff;
+  backdrop-filter: blur(10px);
+  padding: 8rem;
+  border-radius: 10px;
+  text-align: center;
+  align-items: 2rem;
+}
+
+.aluno-container.abrir,
+.professor-container.abrir,
+.administrador-container.abrir,
+.colaborador-container.abrir,
+.feedback-container.abrir,
+.confirmação-container.abrir {
+  display: flex;
+}
+
+@keyframes animate-modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.abrir .aluno,
+.abrir .professor,
+.abrir .administrador,
+.abrir .colaborador,
+.abrir .feedback,
+.abrir .confirmação {
+  animation: animate-modal 0.3s;
+}
+
+/* Seção Apresentação */
+
+.secao-apresentacao {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.coluna-objetivo {
+  display: flex;
+  flex-flow: column;
+}
+
+.p-apresentacao {
+  font-size: 1.8rem;
+  color: #000000;
+}
+
+/* Seção Quem Somos */
+
+/* Seção Agendamento */
+
+.secao-agendamento {
+  padding-bottom: 8rem;
+}
+
+/*Janela Agendamento*/
+
+.fechar {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: #fa221b;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14pt;
+  cursor: pointer;
+}
+
+.calendário-container.abrir {
+  display: flex;
+}
+
+@keyframes animate-modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.abrir .calendário {
+  animation: animate-modal 0.3s;
+}
+
+/*Criação do Calendário*/
+
+.calendário-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000004b;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.calendário {
+  width: 40.4%;
+  background-color: #ffffff;
+  backdrop-filter: blur(10px);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.month {
+  width: 100%;
+  height: 12rem;
+  background-color: #136b49;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+  text-shadow: 0 0.3rem 0.5rem #062b1c;
+}
+
+.month i {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: #37ffb2;
+  line-height: 0%;
+}
+
+.month p {
+  font-size: 1.6rem;
+  color: #ffffff;
+  text-align: center;
+  line-height: 0%;
+}
+
+.weekdays {
+  width: 100%;
+  height: 5rem;
+  padding: 0 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.weekdays div {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  width: calc(44.2rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+}
+
+.days div {
+  font-size: 1.4rem;
+  margin: 0.3rem;
+  width: calc(40.2rem / 7);
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today) {
+  background-color: #262626;
+  border: 0.2rem solid #777;
+  cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
+.today {
+  background-color: #136b49;
+  font-weight: bold;
+}
+
+/*Criação do Horário*/
+
+.horarios-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000004b;
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.horarios h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 7rem;
+  font-weight: 600;
+  color: black;
+  line-height: 0%;
+}
+
+.horarios {
+  width: 44%;
+  background-color: #ffffff;
+  backdrop-filter: blur(10px);
+  padding: 8rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.horarios-container.abrir {
+  display: flex;
+}
+
+@keyframes animate-modal {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.abrir .horarios {
+  animation: animate-modal 0.3s;
+}
+
+.botao-enviar {
+  width: 28%;
+  margin-inline: 0.5rem;
+}
+
+.botao-horario {
+  width: 28%;
+  margin-bottom: 3rem;
+  margin-inline: 0.5rem;
+}
+
+.botao:hover {
+  border: solid 0.2rem #136b49;
+  background-color: #136b49;
+  background-image: none;
+}
+
+/*Footer*/
+footer {
+  width: 100%;
+  height: 15rem;
+  background-color: white;
+  box-shadow: 0 0.21rem 0.4rem rgba(0, 0, 0, 0.856);
+  padding: 2rem 12rem;
+}
