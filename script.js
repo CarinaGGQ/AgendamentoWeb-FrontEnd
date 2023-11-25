@@ -57,12 +57,13 @@ function openModalColaborador() {
 //Confirmação Senha//
 
 var password = document.getElementById("password"),
-  confirm_password = document.getElementById("confirm_password");
+  confirm_password = document.getElementById("confirm-password");
 
 function validatePassword() {
   if (password.value != confirm_password.value) {
     confirm_password.setCustomValidity("Senhas diferentes!");
-  } else {
+  }
+  if (password.value === confirm_password.value) {
     confirm_password.setCustomValidity("");
   }
 }
