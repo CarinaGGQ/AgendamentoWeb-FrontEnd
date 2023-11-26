@@ -56,20 +56,42 @@ function openModalColaborador() {
 
 //Confirmação Senha//
 
-var password = document.getElementById("password"),
-  confirm_password = document.getElementById("confirm-password");
+function validatePassword(passwordId, confirmPasswordId) {
+  var password = document.getElementById("password-novo");
+  var confirm_password = document.getElementById("confirm-password");
 
-function validatePassword() {
-  if (password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Senhas diferentes!");
-  }
-  if (password.value === confirm_password.value) {
+  if (password.value !== confirm_password.value) {
+    confirm_password.setCustomValidity("As senhas não coincidem!");
+    return false;
+  } else {
     confirm_password.setCustomValidity("");
+    return true;
   }
 }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+document.addEventListener("DOMContentLoaded", function () {
+  var password = document.getElementById("password-novo");
+  var confirm_password = document.getElementById("confirm-password");
+
+  function handleFormSubmit(event) {
+    if (!validatePassword("password-novo", "confirm-password")) {
+      // Impede o envio do formulário se as senhas não coincidirem
+      event.preventDefault();
+    }
+  }
+
+  password.addEventListener("input", function () {
+    validatePassword("password-novo", "confirm-password");
+  });
+
+  confirm_password.addEventListener("input", function () {
+    validatePassword("password-novo", "confirm-password");
+  });
+
+  document
+    .getElementById("formulario")
+    .addEventListener("submit", handleFormSubmit);
+});
 
 //Criação da janela Feedback//
 

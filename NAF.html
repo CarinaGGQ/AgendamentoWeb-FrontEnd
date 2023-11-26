@@ -174,6 +174,7 @@
                 name="name"
                 placeholder="*Seu nome completo"
                 required
+                autocomplete="name"
               />
             </div>
 
@@ -185,6 +186,7 @@
                 name="email"
                 placeholder="*Digite seu e-mail"
                 required
+                autocomplete="email"
               />
             </div>
 
@@ -209,15 +211,16 @@
                 name="email"
                 placeholder="*Digite seu e-mail"
                 required
+                autocomplete="email"
               />
             </div>
 
             <div class="item-janela-cabeçalho">
-              <label for="password">Senha:</label>
+              <label for="name">Senha:</label>
               <input
                 type="password"
-                id="password"
-                name="password"
+                id="password-aluno"
+                name="password-aluno"
                 placeholder="*Digite sua senha"
                 required
               />
@@ -244,15 +247,16 @@
                 name="email"
                 placeholder="*Digite seu e-mail"
                 required
+                autocomplete="email"
               />
             </div>
 
             <div class="item-janela-cabeçalho">
-              <label for="password">Senha:</label>
+              <label for="name">Senha:</label>
               <input
                 type="password"
-                id="password"
-                name="password"
+                id="password-professor"
+                name="password-professor"
                 placeholder="*Digite sua senha"
                 required
               />
@@ -279,16 +283,18 @@
                 name="email"
                 placeholder="*Digite seu e-mail"
                 required
+                autocomplete="email"
               />
             </div>
 
             <div class="item-janela-cabeçalho">
-              <label for="password">Senha:</label>
+              <label for="name">Senha:</label>
               <input
                 type="password"
-                id="password"
-                name="password"
+                id="password-administrador"
+                name="password-administrador"
                 placeholder="*Digite sua senha"
+                required
                 required
               />
             </div>
@@ -305,7 +311,12 @@
         <div class="colaborador">
           <button class="fechar" id="fechar">X</button>
 
-          <form action="" class="form form-colaborador">
+          <form
+            action=""
+            class="form form-colaborador"
+            onsubmit="return validatePassword()"
+            id="formulario"
+          >
             <div class="item-janela-cabeçalho">
               <label for="name">Nome:</label>
               <input
@@ -314,33 +325,35 @@
                 name="name"
                 placeholder="*Seu nome completo"
                 required
+                autocomplete="name"
               />
             </div>
 
             <div class="item-janela-cabeçalho">
-              <label for="name">E-mail:</label>
+              <label for="email">E-mail:</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="*Seu e-mail"
                 required
+                autocomplete="email"
               />
             </div>
 
             <div class="item-janela-cabeçalho">
-              <label for="password">Criar senha:</label>
+              <label for="password-novo">Criar senha:</label>
               <input
                 type="password"
-                id="password"
-                name="password"
+                id="password-novo"
+                name="password-novo"
                 placeholder="*Crie sua senha"
                 required
               />
             </div>
 
             <div class="item-janela-cabeçalho">
-              <label for="password">Confirme sua senha:</label>
+              <label for="confirm-password">Confirme sua senha:</label>
               <input
                 type="password"
                 id="confirm-password"
@@ -351,9 +364,7 @@
             </div>
 
             <div class="botao-enviar">
-              <button class="botao" type="submit" onclick="validatePassword()">
-                Enviar
-              </button>
+              <button type="submit" class="botao">Enviar</button>
             </div>
           </form>
         </div>
@@ -373,6 +384,7 @@
                 name="email"
                 placeholder="*Digite seu e-mail"
                 required
+                autocomplete="email"
               />
             </div>
 
@@ -380,10 +392,13 @@
               <label class="label-feedback" for="feedback">Feedback:</label>
               <textarea
                 name="feedback"
+                id="feedback"
                 class="text-input"
                 cols="30"
                 rows="10"
                 placeholder="*Escreva seu feedback"
+                required
+                autocomplete="feedback"
               >
               </textarea>
             </div>
@@ -394,12 +409,11 @@
           </form>
         </div>
       </div>
-
-      <script src="script.js"></script>
     </main>
 
     <footer>
       <img src="./img/Unifeso_logo.png" width="150px" alt="Logo da UNIFESO" />
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
