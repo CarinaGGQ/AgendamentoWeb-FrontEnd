@@ -85,13 +85,13 @@
         <p>
           O Núcleo de Apoio Contábil e Fiscal – NAF é uma parceria com
           instituições de ensino superior, e no caso do Unifeso, envolve cursos
-          de Administração, Ciências Contábeis e Direito. Pessoas são
-          encaminhadas pela agência de Teresópolis da Receita Federal aos
-          serviços do NAF, que são altamente demandados, especialmente durante a
-          temporada de declaração do Imposto de Renda. O NAF proporciona a
-          capacitação e o treinamento dos estudantes, fornecendo-lhes
-          conhecimentos de ordem técnica e ética, visando transmitir a vivência
-          contábil e fiscal dentro da realidade social.<br />
+          de Administração, Ciências Contábeis e Direito. A agência da Receita
+          Federal de Teresópolis encaminha as pessoas aos serviços do NAF, que
+          são altamente demandados, especialmente durante a temporada de
+          declaração do Imposto de Renda. O NAF proporciona a capacitação e o
+          treinamento dos estudantes, fornecendo-lhes conhecimentos de ordem
+          técnica e ética, visando transmitir a vivência contábil e fiscal
+          dentro da realidade social.<br />
         </p>
       </section>
 
@@ -100,7 +100,10 @@
         <h3>Agendamento</h3>
         <p>
           O atendimento ao público é realizado no edifício (colocar o nome do
-          edifício) no Campus Antonio Paulo Capanema de Souza.
+          edifício) no Campus Antonio Paulo Capanema de Souza da UNIFESO.
+        </p>
+        <p class="último-p">
+          Lembre-se de levar a documentação adequada para o serviço requerido.
         </p>
         <!--Botão Agendamento-->
         <div onclick="openModalCalendario()" class="botao botao-agendamento">
@@ -187,6 +190,17 @@
                 placeholder="*Digite seu e-mail"
                 required
                 autocomplete="email"
+              />
+            </div>
+            <div class="item-janela-cabeçalho">
+              <label for="name">Serviço:</label>
+              <input
+                type="text"
+                id="serviço"
+                name="serviço"
+                placeholder="*Digite o serviço que necessita"
+                required
+                autocomplete="serviço"
               />
             </div>
 
@@ -317,7 +331,7 @@
             onsubmit="return validatePassword()"
             id="formulario"
           >
-            <div class="item-janela-cabeçalho">
+            <div class="item-janela-cabeçalho item-janela-colaborador">
               <label for="name">Nome:</label>
               <input
                 type="text"
@@ -329,7 +343,7 @@
               />
             </div>
 
-            <div class="item-janela-cabeçalho">
+            <div class="item-janela-cabeçalho item-janela-colaborador">
               <label for="email">E-mail:</label>
               <input
                 type="email"
@@ -341,7 +355,7 @@
               />
             </div>
 
-            <div class="item-janela-cabeçalho">
+            <div class="item-janela-cabeçalho item-janela-colaborador">
               <label for="password-novo">Criar senha:</label>
               <input
                 type="password"
@@ -352,7 +366,7 @@
               />
             </div>
 
-            <div class="item-janela-cabeçalho">
+            <div class="item-janela-cabeçalho item-janela-colaborador">
               <label for="confirm-password">Confirme sua senha:</label>
               <input
                 type="password"

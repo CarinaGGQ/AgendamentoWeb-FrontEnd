@@ -23,7 +23,7 @@ h1 {
   font-family: "Arapey", sans-serif;
   font-size: 7.5rem;
   line-height: 1;
-  padding: 2rem 0;
+  padding: 1.2rem 0;
   display: block;
 }
 
@@ -46,6 +46,7 @@ p {
   font-size: 16px;
   padding: 2rem 0;
   color: #757575;
+  line-height: 1.5;
 }
 
 ul {
@@ -62,6 +63,7 @@ input {
   font-size: inherit;
   line-height: inherit;
   color: #404040;
+  width: 30rem;
 }
 
 input:focus {
@@ -172,6 +174,10 @@ nav ul {
   cursor: pointer;
 }
 
+.item-janela-colaborador {
+  text-align: right;
+}
+
 .botao-enviar {
   padding-top: 1rem;
   width: 28%;
@@ -185,7 +191,7 @@ nav ul {
 .colaborador-container,
 .feedback-container,
 .confirmação-container {
-  width: 100vw;
+  width: 101vw;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -279,6 +285,11 @@ nav ul {
 
 .secao-agendamento {
   padding-bottom: 8rem;
+}
+
+.último-p {
+  padding-bottom: 3rem;
+  padding-top: 0;
 }
 
 /*Janela Agendamento*/
