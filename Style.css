@@ -430,6 +430,12 @@ nav ul {
   font-weight: bold;
 }
 
+.days div.passado {
+  opacity: 0.5;
+  pointer-events: none; /* Desativa a capacidade de clique nos dias passados */
+  cursor: not-allowed;
+}
+
 /*Criação do Horário*/
 
 .horarios-container {

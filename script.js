@@ -178,9 +178,20 @@ const renderCalendar = () => {
   }
 
   for (let i = 1; i <= lastDay; i++) {
+    const currentDate = new Date();
+    const currentMonth = currentDate.getMonth();
+    const currentYear = currentDate.getFullYear();
+
+    // Adicione a classe "passado" aos dias passados
     if (
-      i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth()
+      date.getMonth() < currentMonth ||
+      date.getFullYear() < currentYear ||
+      (date.getMonth() === currentMonth && i < currentDate.getDate())
+    ) {
+      days += `<div class="passado">${i}</div>`;
+    } else if (
+      i === currentDate.getDate() &&
+      date.getMonth() === currentMonth
     ) {
       days += `<div class="today">${i}</div>`;
     } else {
