@@ -221,13 +221,26 @@ renderCalendar();
 
 function openModalHorario() {
   const modal = document.getElementById("horarios-container");
+  const passados = document.querySelectorAll(".passado");
+
   modal.classList.add("abrir");
 
   modal.addEventListener("click", (e) => {
-    if (e.target.id == "horarios-container" || e.target.id == "fechar") {
+    if (
+      e.target.id == "horarios-container" ||
+      e.target.id == "fechar" ||
+      e.target.classList.contains("passado")
+    ) {
       modal.classList.remove("abrir");
       localStorage.fechaModal = "horarios-container";
     }
+  });
+
+  // Adicione o seguinte código para impedir a abertura da janela de horários
+  passados.forEach((diaPassado) => {
+    diaPassado.addEventListener("click", (e) => {
+      e.stopPropagation(); // Impede a propagação do evento para evitar a abertura da janela
+    });
   });
 }
 
