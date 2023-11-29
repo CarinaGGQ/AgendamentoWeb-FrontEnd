@@ -1,0 +1,19 @@
+@media all and (max-width: 64.4em) {
+  html {
+    padding: 0 4rem;
+    font-size: 50%;
+  }
+
+  .secao-apresentacao {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .imagem-apresentacao {
+    max-width: fit-content;
+  }
+
+  .secao {
+    padding: 2rem 2rem;
+  }
+}

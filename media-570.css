@@ -1,0 +1,11 @@
+@media all and (max-width: 64.4em) {
+  html {
+    padding: 0 2.5rem;
+    font-size: 40%;
+  }
+
+  .imagem-apresentacao {
+    justify-content: center;
+    max-width: 100%;
+  }
+}

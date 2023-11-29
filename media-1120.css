@@ -1,0 +1,9 @@
+@media all and (max-width: 70em) {
+  html {
+    font-size: 55%;
+  }
+
+  .imagem-apresentacao {
+    max-width: 40vw;
+  }
+}
