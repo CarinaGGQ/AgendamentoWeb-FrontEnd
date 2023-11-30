@@ -42,6 +42,10 @@ Protótipo:
 A seguir encontra-se o link de acesso ao protótipo.
 https://www.figma.com/file/hbVyCD68M33X9Z9hygaV8z/AgendamentoWeb?type=design&node-id=0%3A1&mode=design&t=zLe6dgMAJzEr7Yom-1
 
+A página foi feita para acessar do computador, o acesso em mobile ainda está sendo ajustado para ficar com o layout adequado.
+Link de acesso ao depoy da página web:
+https://6568ce9cc0ce270ae4ee7f51--radiant-muffin-1fa1d8.netlify.app/
+
 Conclusão:
 Visto que esse é um projeto Front-End, alguns requisitos não serão atendidos inicialmente, como o envio de formulários para cadastro, login dos usuários, transmissão de feedback, efetuação do agendamento e envio de e-mails.
 Com o tempo, pretende-se melhorar o projeto continuamente, já que este é o objetivo do MVP, e elaborar os requisitos faltantes referentes à programação Back-End.
