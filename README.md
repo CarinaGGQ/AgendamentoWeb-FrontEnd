@@ -43,7 +43,7 @@ A seguir encontra-se o link de acesso ao protótipo.
 https://www.figma.com/file/hbVyCD68M33X9Z9hygaV8z/AgendamentoWeb?type=design&node-id=0%3A1&mode=design&t=zLe6dgMAJzEr7Yom-1
 
 A página foi feita para acessar do computador, o acesso em mobile ainda está sendo ajustado para ficar com o layout adequado.
-Link de acesso ao depoy da página web:
+Para executar o MVP localmente basta acessar o Link abaixo: 
 https://6568ce9cc0ce270ae4ee7f51--radiant-muffin-1fa1d8.netlify.app/
 
 Conclusão:
