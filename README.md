@@ -20,7 +20,9 @@ Objetivo Geral:
 Esse projeto MVP tem por objetivo solucionar o problema de falta de ferramenta digital para a população local efetuar agendamento para prestação presencial dos serviços do NAF, sendo o mais solicitado a declaração do Imposto de Renda.
 
 Objetivos Específicos/Requisitos:
+
 Requisitos Funcionais:
+
 [RF01]: O sistema deve apresentar os horários disponíveis e permitir o agendamento presencial dos serviços do NAF.
 
 [RF02]: Os professores e estudantes devem ter cadastro no sistema para registrar seus dados relevantes para a prestação dos serviços.
@@ -53,6 +55,7 @@ Requisitos Não-Funcionais:
 
 Protótipo:
 A seguir encontra-se o link de acesso ao protótipo.
+
 https://www.figma.com/file/hbVyCD68M33X9Z9hygaV8z/AgendamentoWeb?type=design&node-id=0%3A1&mode=design&t=zLe6dgMAJzEr7Yom-1
 
 A página foi feita para acessar do computador, o acesso em mobile ainda está sendo ajustado para ficar com o layout adequado.
