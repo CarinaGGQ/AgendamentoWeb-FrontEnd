@@ -22,20 +22,33 @@ Esse projeto MVP tem por objetivo solucionar o problema de falta de ferramenta d
 Objetivos Específicos/Requisitos:
 Requisitos Funcionais:
 [RF01]: O sistema deve apresentar os horários disponíveis e permitir o agendamento presencial dos serviços do NAF.
+
 [RF02]: Os professores e estudantes devem ter cadastro no sistema para registrar seus dados relevantes para a prestação dos serviços.
+
 [RF03]: O sistema deve registrar dados do usuário como nome e e-mail para a validação do agendamento.
+
 [RF04]: O sistema deve enviar notificação automática por e-mail aos usuários para confirmar o agendamento e lembra-los a data e horário do atendimento.
+
 [RF05]: Administradores do NAF devem ter cadastro no sistema para permiti-los que configurem a disponibilidade de atendimentos e horários de funcionamento.
+
 [RF06]: O sistema deve permitir que os usuários escrevam seu feedback e suas avaliações sobre os atendimentos:
+
 [RF06.1]: Na própria página haverá local para o usuário escrever seu feedback.
+
 [RF06.2]: O sistema deve enviar notificação automática por e-mail aos usuários, 2 horas após o horário marcado no agendamento, os lembrando de escreverem seu feedback e deverá informar o link para isso no próprio e-mail.
 
 Requisitos Não-Funcionais:
+
 [RNF01]: O sistema deve garantir a segurança e privacidade das informações pessoais de todos os seus usuários.
+
 [RNF02]: A interface do usuário deve ser amigável e de fácil utilização, com uma navegação intuitiva e design atraente.
+
 [RNF03]: O sistema deve estar disponível a todo momento (24 horas por dia, 7 dias por semana), exceto quando ocorrerem manutenções, que devem ser programadas, aplicadas com rapidez e em momentos de pouca usabilidade.
+
 [RNF04]: O tempo de resposta do sistema deve ser inferior a 2 segundos.
+
 [RNF05]: O sistema deve atender um grande número de usuários simultaneamente.
+
 [RNF06]: O sistema deve estar em conformidade com a RGPD (Regulamento Geral de Proteção de Dados).
 
 Protótipo:
@@ -44,6 +57,7 @@ https://www.figma.com/file/hbVyCD68M33X9Z9hygaV8z/AgendamentoWeb?type=design&nod
 
 A página foi feita para acessar do computador, o acesso em mobile ainda está sendo ajustado para ficar com o layout adequado.
 Para executar o MVP localmente basta acessar o Link abaixo:
+
 https://6568ce9cc0ce270ae4ee7f51--radiant-muffin-1fa1d8.netlify.app/
 
 Conclusão:
