@@ -6,6 +6,8 @@ Projeto MVP Front-End da faculdade para desenvolver um website que simplifique o
 
 Este é um projeto MVP (Minimum Viable Product) Front-End, ou seja, foi elaborado para ilustrar e demonstrar por meio das linguagens HTML, CSS e JavaScript como o produto mínimo viável ficará, sendo feitas melhorias constantes.
 
+A página foi criada baseada no conceito de Single Page Application - SPA, que em uma única página se consegue fazer todas as interações necessárias.
+
 O desafio é o seguinte: criar uma solução digital que permita à população agendar atendimentos presenciais no local determinado de forma eficiente e conveniente. Mais especificamente, a meta é desenvolver um website que simplifique o processo de agendamento para aqueles que desejam obter assistência com suas declarações de Imposto de Renda e outros serviços oferecidos pelo NAF.
 
 Foram usados códigos em HTML, CSS e JavaScript na página por meio do editor de códigos Visual Studio Code.
