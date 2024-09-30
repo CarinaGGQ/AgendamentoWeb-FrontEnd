@@ -60,6 +60,3 @@ O MVP pode ser acessado localmente através do seguinte link:
 
 Como este é um projeto focado no Front-End, alguns requisitos ainda não estão implementados, como cadastro de usuários, envio de e-mails e efetivação do agendamento. Com o tempo, serão feitas melhorias e os requisitos Back-End serão incluídos.
 
----
-
-**Carina Guida Graça Quintella**
