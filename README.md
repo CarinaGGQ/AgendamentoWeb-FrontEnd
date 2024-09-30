@@ -1,70 +1,65 @@
 # AgendamentoWeb-FrontEnd
 
-Desenvolvedor: Carina Guida Graça Quintella.
+**Desenvolvedor:** Carina Guida Graça Quintella
 
-Projeto MVP Front-End da faculdade para desenvolver um website que simplifique o processo de agendamento para aqueles que desejam obter assistência dos serviços oferecidos pelo Núcleo de Apoio Contábil e Fiscal - NAF.
+## Descrição do Projeto
 
-Este é um projeto MVP (Minimum Viable Product) Front-End, ou seja, foi elaborado para ilustrar e demonstrar por meio das linguagens HTML, CSS e JavaScript como o produto mínimo viável ficará, sendo feitas melhorias constantes.
+Este é o projeto Front-End do MVP (Minimum Viable Product) desenvolvido para a faculdade, com o objetivo de criar um website que simplifique o processo de agendamento dos serviços oferecidos pelo **Núcleo de Apoio Contábil e Fiscal (NAF)**. 
 
-A página foi criada baseada no conceito de Single Page Application - SPA, que em uma única página se consegue fazer todas as interações necessárias.
+O objetivo principal é facilitar o agendamento de atendimentos presenciais, especialmente para assistência na declaração de Imposto de Renda e outros serviços contábeis e fiscais oferecidos pelo NAF.
 
-O desafio é o seguinte: criar uma solução digital que permita à população agendar atendimentos presenciais no local determinado de forma eficiente e conveniente. Mais especificamente, a meta é desenvolver um website que simplifique o processo de agendamento para aqueles que desejam obter assistência com suas declarações de Imposto de Renda e outros serviços oferecidos pelo NAF.
+O projeto foi desenvolvido com **HTML**, **CSS** e **JavaScript** utilizando o editor de código **Visual Studio Code**. Foi criado como uma **Single Page Application (SPA)**, permitindo que todas as interações necessárias aconteçam em uma única página.
 
-Foram usados códigos em HTML, CSS e JavaScript na página por meio do editor de códigos Visual Studio Code.
-A linguagem HTML foi usada para definir a estrutura da página Web, o CSS foi usado para dar estilo a ela e o JavaScript foi implementado para abrir janelas com o clique e fazer efeitos, como a mudança da cor, ao passar o mouse (hover) sobre o elemento da página.
+## Objetivo Geral
 
-Atores Envolvidos:
-o	Estudantes e Professores da Unifeso: Eles representam a equipe que conduzirá os atendimentos no NAF. Os estudantes, sob supervisão de professores, desempenharão um papel fundamental na prestação dos serviços.
-o	População Local: Este grupo inclui cidadãos que procuram assistência fiscal e contábil. Eles devem ser capazes de acessar o site, visualizar os horários disponíveis e agendar um atendimento de acordo com sua conveniência.
-o	Administração do NAF: A equipe de gestão do NAF será responsável por supervisionar e gerenciar o sistema de agendamento, bem como garantir que os atendimentos sejam distribuídos de forma eficaz entre os estudantes e professores.
+O objetivo do projeto é oferecer uma solução digital para a população local agendar atendimentos presenciais no NAF de maneira eficiente e conveniente.
 
-Objetivo Geral:
-Esse projeto MVP tem por objetivo solucionar o problema de falta de ferramenta digital para a população local efetuar agendamento para prestação presencial dos serviços do NAF, sendo o mais solicitado a declaração do Imposto de Renda.
+## Tecnologias Utilizadas
 
-Objetivos Específicos/Requisitos:
+- **HTML**: Definição da estrutura da página.
+- **CSS**: Estilização da página.
+- **JavaScript**: Implementação de funcionalidades como cliques e efeitos ao passar o mouse (hover).
 
-Requisitos Funcionais:
+## Funcionalidades e Requisitos
 
-[RF01]: O sistema deve apresentar os horários disponíveis e permitir o agendamento presencial dos serviços do NAF.
+### Requisitos Funcionais
 
-[RF02]: Os professores e estudantes devem ter cadastro no sistema para registrar seus dados relevantes para a prestação dos serviços.
+- **[RF01]**: O sistema deve apresentar horários disponíveis para agendamento presencial dos serviços do NAF.
+- **[RF02]**: Professores e estudantes devem ter cadastro no sistema para registrar seus dados.
+- **[RF03]**: O sistema deve registrar nome e e-mail dos usuários para validar o agendamento.
+- **[RF04]**: O sistema deve enviar notificações automáticas por e-mail para confirmar o agendamento e lembrar da data e horário.
+- **[RF05]**: Administradores do NAF devem configurar a disponibilidade de horários.
+- **[RF06]**: O sistema deve permitir que os usuários deixem feedbacks sobre os atendimentos.
+  - **[RF06.1]**: A página deve ter um campo para feedback.
+  - **[RF06.2]**: O sistema deve enviar notificações 2 horas após o atendimento para solicitar feedback via e-mail.
 
-[RF03]: O sistema deve registrar dados do usuário como nome e e-mail para a validação do agendamento.
+### Requisitos Não-Funcionais
 
-[RF04]: O sistema deve enviar notificação automática por e-mail aos usuários para confirmar o agendamento e lembra-los a data e horário do atendimento.
+- **[RNF01]**: O sistema deve garantir segurança e privacidade dos dados dos usuários.
+- **[RNF02]**: A interface do usuário deve ser amigável e de fácil utilização.
+- **[RNF03]**: O sistema deve estar disponível 24/7, exceto durante manutenções programadas.
+- **[RNF04]**: O tempo de resposta do sistema deve ser inferior a 2 segundos.
+- **[RNF05]**: O sistema deve suportar um grande número de usuários simultaneamente.
+- **[RNF06]**: O sistema deve estar em conformidade com a **RGPD** (Regulamento Geral de Proteção de Dados).
 
-[RF05]: Administradores do NAF devem ter cadastro no sistema para permiti-los que configurem a disponibilidade de atendimentos e horários de funcionamento.
+## Protótipo
 
-[RF06]: O sistema deve permitir que os usuários escrevam seu feedback e suas avaliações sobre os atendimentos:
+Você pode acessar o protótipo do projeto no link abaixo:
 
-[RF06.1]: Na própria página haverá local para o usuário escrever seu feedback.
+[Protótipo no Figma](https://www.figma.com/file/hbVyCD68M33X9Z9hygaV8z/AgendamentoWeb?type=design&node-id=0%3A1&mode=design&t=zLe6dgMAJzEr7Yom-1)
 
-[RF06.2]: O sistema deve enviar notificação automática por e-mail aos usuários, 2 horas após o horário marcado no agendamento, os lembrando de escreverem seu feedback e deverá informar o link para isso no próprio e-mail.
+## Acesso ao MVP
 
-Requisitos Não-Funcionais:
+O MVP pode ser acessado localmente através do seguinte link:
 
-[RNF01]: O sistema deve garantir a segurança e privacidade das informações pessoais de todos os seus usuários.
+[AgendamentoWeb - MVP](https://6568ce9cc0ce270ae4ee7f51--radiant-muffin-1fa1d8.netlify.app/)
 
-[RNF02]: A interface do usuário deve ser amigável e de fácil utilização, com uma navegação intuitiva e design atraente.
+> **Nota:** Atualmente, o layout ainda está sendo ajustado para dispositivos móveis.
 
-[RNF03]: O sistema deve estar disponível a todo momento (24 horas por dia, 7 dias por semana), exceto quando ocorrerem manutenções, que devem ser programadas, aplicadas com rapidez e em momentos de pouca usabilidade.
+## Conclusão
 
-[RNF04]: O tempo de resposta do sistema deve ser inferior a 2 segundos.
+Como este é um projeto focado no Front-End, alguns requisitos ainda não estão implementados, como cadastro de usuários, envio de e-mails e efetivação do agendamento. Com o tempo, serão feitas melhorias e os requisitos Back-End serão incluídos.
 
-[RNF05]: O sistema deve atender um grande número de usuários simultaneamente.
+---
 
-[RNF06]: O sistema deve estar em conformidade com a RGPD (Regulamento Geral de Proteção de Dados).
-
-Protótipo:
-A seguir encontra-se o link de acesso ao protótipo.
-
-https://www.figma.com/file/hbVyCD68M33X9Z9hygaV8z/AgendamentoWeb?type=design&node-id=0%3A1&mode=design&t=zLe6dgMAJzEr7Yom-1
-
-A página foi feita para acessar do computador, o acesso em mobile ainda está sendo ajustado para ficar com o layout adequado.
-Para executar o MVP localmente basta acessar o Link abaixo:
-
-https://6568ce9cc0ce270ae4ee7f51--radiant-muffin-1fa1d8.netlify.app/
-
-Conclusão:
-Visto que esse é um projeto Front-End, alguns requisitos não serão atendidos inicialmente, como o envio de formulários para cadastro, login dos usuários, transmissão de feedback, efetuação do agendamento e envio de e-mails.
-Com o tempo, pretende-se melhorar o projeto continuamente, já que este é o objetivo do MVP, e elaborar os requisitos faltantes referentes à programação Back-End.
+**Carina Guida Graça Quintella**
