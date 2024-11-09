@@ -109,9 +109,13 @@ function openModalFeedback() {
 
 //Criação da janela Calendário//
 
+// Criação da janela Calendário
 function openModalCalendario() {
   const modal = document.getElementById("calendário-container");
   modal.classList.add("abrir");
+
+  // Renderize o calendário sempre que o modal for aberto, após garantir que o DOM está carregado
+  setTimeout(renderCalendar, 0);
 
   modal.addEventListener("click", (e) => {
     if (e.target.id == "calendário-container" || e.target.id == "fechar") {
@@ -121,11 +125,12 @@ function openModalCalendario() {
   });
 }
 
-//Criação do Calendário//
-
+// Criação do Calendário
 const date = new Date();
 
+// Função que renderiza o calendário
 const renderCalendar = () => {
+  // Ajusta o primeiro dia do mês
   date.setDate(1);
 
   const monthDays = document.querySelector(".days");
@@ -134,23 +139,19 @@ const renderCalendar = () => {
     date.getFullYear(),
     date.getMonth() + 1,
     0
-  ).getDate();
-
+  ).getDate(); // Último dia do mês atual
   const prevLastDay = new Date(
     date.getFullYear(),
     date.getMonth(),
     0
-  ).getDate();
-
-  const firstDayIndex = date.getDay();
-
+  ).getDate(); // Último dia do mês anterior
+  const firstDayIndex = date.getDay(); // Índice do primeiro dia da semana
   const lastDayIndex = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
     0
-  ).getDay();
-
-  const nextDays = 7 - lastDayIndex - 1;
+  ).getDay(); // Índice do último dia da semana
+  const prevDays = firstDayIndex; // Quantos dias do mês anterior mostrar
 
   const months = [
     "Janeiro",
@@ -167,22 +168,24 @@ const renderCalendar = () => {
     "Dezembro",
   ];
 
+  // Atualiza o título do mês e do ano no calendário
   document.querySelector(".date h1").innerHTML = months[date.getMonth()];
-
   document.querySelector(".date p").innerHTML = date.getFullYear();
 
   let days = "";
 
-  for (let x = firstDayIndex; x > 0; x--) {
-    days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+  // Mostrar os dias do mês anterior, se houver espaço no início
+  for (let x = prevLastDay - prevDays + 1; x <= prevLastDay; x++) {
+    days += `<div class="prev-date">${x}</div>`; // Dias do mês anterior
   }
 
+  // Mostrar os dias do mês atual
   for (let i = 1; i <= lastDay; i++) {
     const currentDate = new Date();
     const currentMonth = currentDate.getMonth();
     const currentYear = currentDate.getFullYear();
 
-    // Adicione a classe "passado" aos dias passados
+    // Adiciona classes para os dias passados, o dia de hoje e outros dias
     if (
       date.getMonth() < currentMonth ||
       date.getFullYear() < currentYear ||
@@ -199,22 +202,65 @@ const renderCalendar = () => {
     }
   }
 
-  for (let j = 1; j <= nextDays; j++) {
-    days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
-  }
+  // Atualiza os dias visíveis no mês
+  monthDays.innerHTML = days;
 };
 
+// Impede a navegação para o ano anterior ou ano seguinte
 document.querySelector(".prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
+  // Restringe a navegação ao ano atual
+  if (date.getFullYear() === new Date().getFullYear()) {
+    // Somente altera o mês, não o ano
+    if (date.getMonth() > 0) {
+      date.setMonth(date.getMonth() - 1); // Vai para o mês anterior
+      renderCalendar();
+    }
+  }
 });
 
 document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
+  // Restringe a navegação ao ano atual
+  if (date.getFullYear() === new Date().getFullYear()) {
+    // Somente altera o mês, não o ano
+    if (date.getMonth() < 11) {
+      date.setMonth(date.getMonth() + 1); // Vai para o mês seguinte
+      renderCalendar();
+    }
+  }
 });
 
+// Adiciona um evento de clique ao calendário que verifica se o dia clicado é válido
+document.querySelector(".days").addEventListener("click", function (e) {
+  const clickedDay = e.target;
+  const currentDate = new Date();
+  const currentDay = currentDate.getDate();
+  const currentMonth = currentDate.getMonth(); // Mês atual
+  const currentYear = currentDate.getFullYear(); // Ano atual
+
+  const clickedDayNumber = parseInt(clickedDay.innerText); // Número do dia clicado
+  const clickedDayClass = clickedDay.classList; // Classes do dia clicado
+
+  // Verifica se o dia clicado é do mês anterior ou de meses anteriores
+  const isPreviousMonth = clickedDayClass.contains("prev-date");
+  const isPastDay = clickedDayClass.contains("passado");
+
+  // Se o dia clicado for do mês anterior ou um dia passado, não faz nada
+  if (
+    isPreviousMonth || // Verifica se o dia é do mês anterior
+    isPastDay || // Verifica se o dia é passado no mês atual
+    (currentYear === date.getFullYear() &&
+      currentMonth === date.getMonth() &&
+      clickedDayNumber < currentDay) // Verifica se o dia é anterior ao dia atual
+  ) {
+    // Se for um dia inválido (passado ou mês anterior), não faz nada
+    return; // Aqui a função retorna e **não abre** a janela de horários
+  }
+
+  // Caso contrário, abre a janela de horários
+  openModalHorario();
+});
+
+// Inicializa o calendário com o mês atual
 renderCalendar();
 
 //Criação da janela Horário//

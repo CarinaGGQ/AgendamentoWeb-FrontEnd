@@ -330,12 +330,6 @@ nav ul {
   transition: background-color 0.2s;
 }
 
-.days div:hover:not(.today) {
-  background-color: #262626;
-  border: 0.2rem solid #777;
-  cursor: pointer;
-}
-
 .prev-date,
 .next-date {
   opacity: 0.5;
@@ -344,12 +338,22 @@ nav ul {
 .today {
   background-color: #136b49;
   font-weight: bold;
+  cursor: not-allowed;
 }
 
-.days div.passado {
-  opacity: 0.5;
-  pointer-events: none; /* Desativa a capacidade de clique nos dias passados */
-  cursor: not-allowed;
+/* Remove o efeito de hover nos dias passados do mês atual e nos dias do mês anterior */
+.days div.passado:hover,
+.days div.prev-date:hover {
+  background-color: transparent; /* Remove o fundo */
+  border: none; /* Remove a borda */
+  cursor: not-allowed; /* Adiciona um cursor para indicar que está desabilitado */
+}
+
+/* Mantém o efeito hover para dias futuros */
+.days div:hover:not(.today):not(.passado):not(.prev-date) {
+  background-color: #262626;
+  border: 0.2rem solid #777;
+  cursor: pointer;
 }
 
 /*Criação do Horário*/
@@ -372,7 +376,6 @@ nav ul {
   text-transform: uppercase;
   margin-bottom: 7rem;
   font-weight: 600;
-  line-height: 0%;
   text-align: center;
 }
 
@@ -406,7 +409,6 @@ nav ul {
 }
 
 .botao-horario {
-  width: 28%;
   margin-bottom: 3rem;
   margin-inline: 0.5rem;
 }
@@ -414,7 +416,6 @@ nav ul {
 .botao:hover {
   border: solid 0.2rem #136b49;
   background-color: #136b49;
-  background-image: none;
 }
 
 /*Footer*/

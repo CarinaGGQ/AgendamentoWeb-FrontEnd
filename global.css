@@ -87,7 +87,7 @@ input::placeholder {
   padding: 0.65rem 2.5rem;
   color: white;
   box-shadow: 0 0.21rem 0.8rem rgba(0, 0, 0, 0.15);
-  border: 0;
+  border: 0.2rem;
   border-bottom: solid 0.4rem #08412b;
   border-right: solid 0.4rem #08412b;
   background-image: linear-gradient(180deg, #136b49, #545a58);
